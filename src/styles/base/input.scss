@@ -1,0 +1,78 @@
+.input {
+  position: relative;
+  padding-top: 13px;
+  width: 100%;
+
+  &__disabled {
+    color: $uiLightSecondary;
+  }
+
+  &__flag {
+    position: absolute;
+    left: 0;
+    top: 20px;
+  }
+
+  p {
+    margin-top: 8px;
+    color: $uiDarkSecondary;
+  }
+
+  & input {
+    border: 0;
+    border-bottom: 2px solid $uiLightSecondary;
+    outline: none;
+    min-width: 100px;
+    font-size: 16px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    border-radius: 0;
+    background-color: transparent;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  & input:focus {
+    border-bottom: 2px solid $uiBluePrimary;
+  }
+
+  & input:not(:placeholder-shown) {
+    border-bottom: 2px solid $uiLightSecondary;
+  }
+
+  & input::placeholder {
+    color: transparent;
+  }
+
+  & label {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    color: $uiLightSecondary;
+    font-weight: 400;
+  }
+
+  & input:required:invalid + label {
+    color: red;
+  }
+
+  & input:focus:required:invalid {
+    border-bottom: 2px solid red;
+  }
+
+  & input:required:invalid + label:before {
+    content: '*';
+  }
+}
+
+.input input:focus + label,
+.input input:not(:placeholder-shown) + label {
+  font-size: 13px;
+  margin-top: 0;
+}

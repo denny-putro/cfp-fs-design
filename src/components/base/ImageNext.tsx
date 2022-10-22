@@ -21,7 +21,6 @@ export default function ImageNext(props: Props) {
 
   return (
     <>
-      {loading && <SkeletonLoader />}
       <div
         className="image"
         style={{
@@ -29,6 +28,7 @@ export default function ImageNext(props: Props) {
           height: height ? height : '100px',
         }}
       >
+        {loading && <SkeletonLoader />}
         <Image
           loader={myLoader}
           unoptimized={true}

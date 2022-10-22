@@ -1,0 +1,131 @@
+.dropdown {
+  position: relative;
+  padding-top: 13px;
+  width: 100%;
+
+  &__icon {
+    position: absolute;
+    top: 20px;
+    right: 0;
+  }
+
+  & input {
+    border: 0;
+    border-bottom: 2px solid $uiLightSecondary;
+    outline: none;
+    min-width: 160px;
+    font-size: 16px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    border-radius: 0;
+    background-color: transparent;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  & input:not(:placeholder-shown) {
+    border-bottom: 2px solid $uiLightSecondary;
+  }
+
+  & input::placeholder {
+    color: transparent;
+  }
+
+  & label {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    color: $uiLightSecondary;
+    font-weight: 400;
+  }
+
+  & input:required:invalid + label {
+    color: red;
+  }
+
+  & input:focus:required:invalid {
+    border-bottom: 2px solid red;
+  }
+
+  & input:required:invalid + label:before {
+    content: '*';
+  }
+}
+
+.dropdown input:not(:placeholder-shown) + label {
+  font-size: 13px;
+  margin-top: 0;
+}
+
+.dropdownPopup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  max-width: 420px;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  height: calc(var(vh, 1vh) * 100);
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+
+  &__content {
+    animation: animateDropdown 0.4s;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 8px 8px 0 0;
+  }
+
+  &__title {
+    display: flex;
+    margin: 16px 16px 0;
+    text-align: center;
+    p {
+      flex: 1;
+    }
+  }
+
+  &__radio {
+    border-bottom: 2px solid $uiLightNeutral;
+    padding: 16px;
+    cursor: pointer;
+
+    label {
+      margin-left: 8px;
+    }
+  }
+
+  &__button {
+    padding: 16px;
+    display: flex;
+    button:last-child {
+      margin-left: 4px;
+    }
+  }
+
+  &.active {
+    display: flex;
+  }
+}
+
+@keyframes animateDropdown {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+} ;
