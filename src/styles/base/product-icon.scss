@@ -1,0 +1,11 @@
+.productIcon {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    align-items: center;
+    margin: 12px 0;
+
+    span {
+        margin-top: 8px;
+    }
+}

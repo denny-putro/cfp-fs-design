@@ -8,8 +8,13 @@
 @import 'base/button';
 @import 'base/image.scss';
 @import 'base/dropdown.scss';
+@import 'base/spacer.scss';
+@import 'base/navbar.scss';
+@import 'base/product-icon.scss';
 
 @import 'pages/user-identity/home';
+@import 'pages/payment/home';
+@import 'pages/payment/flight';
 
 @import 'plugin/slick';
 @import 'plugin/slick-theme';

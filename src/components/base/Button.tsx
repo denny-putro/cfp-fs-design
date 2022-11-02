@@ -18,7 +18,6 @@ export default function Button(props: Props) {
     return (
       <Link href={toPage ?? '/'} passHref>
         <a
-          target="_blank"
           className={`button button__${type} ${className}`}
           onClick={type === 'disabled' ? undefined : onClick}
         >
